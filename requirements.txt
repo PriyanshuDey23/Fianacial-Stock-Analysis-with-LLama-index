@@ -1,0 +1,9 @@
+google-generativeai
+ib_insync
+pandas
+llama-index==0.9.39
+jinja2
+streamlit
+python-dotenv
+langchain-community
+sentence_transformers
