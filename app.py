@@ -57,22 +57,23 @@ st.title('Financial Stock Analysis using LlamaIndex')
 
 st.header("Reports:")
 
+# Select Box
 report_type = st.selectbox(
     'What type of report do you want?',
     ('Single Stock Outlook', 'Competitor Analysis'))
 
-
+# Handle the single one
 if report_type == 'Single Stock Outlook':
-    symbol = st.text_input("Stock Symbol")
+    symbol = st.text_input("Stock Symbol") # Input text
 
     if symbol:
-        with st.spinner(f'Generating report for {symbol}...'):
+        with st.spinner(f'Generating report for {symbol}...'): 
             response = query_engine.query(f"Write a report on the outlook for {symbol} stock from the years 2023-2027. Be sure to include potential risks and headwinds.")
             print(type(response))
 
             st.write(str(response))
             
-
+# Handle Competitor Analysis
 if report_type == 'Competitor Analysis':
     symbol1 = st.text_input("Stock Symbol 1")
     symbol2 = st.text_input("Stock Symbol 2")
